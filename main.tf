@@ -25,8 +25,8 @@ data "null_data_source" "some_values" {
 
 data "archive_file" "dummy" {
   type        = "zip"
-  source_file = "file.dummy"
-  output_path = "file_dummy.zip"
+  source_file = "${path.module}/file.dummy"
+  output_path = "${path.module}/file_dummy.zip"
   depends_on = [ data.null_data_source.some_values ]
 }
 
